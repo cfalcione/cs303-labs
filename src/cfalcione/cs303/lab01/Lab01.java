@@ -1,7 +1,7 @@
 package cfalcione.cs303.lab01;
 
 
-import cfalcione.cs303.Lab;
+import cfalcione.cs303.shared.Lab;
 
 public class Lab01 extends Lab{
 

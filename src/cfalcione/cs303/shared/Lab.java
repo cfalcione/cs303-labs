@@ -1,4 +1,4 @@
-package cfalcione.cs303;
+package cfalcione.cs303.shared;
 
 public abstract class Lab {
 
