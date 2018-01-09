@@ -2,7 +2,7 @@ package cfalcione.cs303.shared;
 
 public class Helpers {
 
-    public static <T> void printIterable( Iterable<T> iterable, int rowWidth) {
+    public static <T> void printIterable(Iterable<T> iterable, int rowWidth) {
         int col = 1;
         for (Object obj : iterable) {
             System.out.print(obj + "\t");

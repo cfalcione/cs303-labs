@@ -6,7 +6,7 @@ import cfalcione.cs303.shared.Lab;
 
 import java.util.*;
 
-public class Lab01 extends Lab{
+public class Lab01 extends Lab {
 
     public static final int ARRAY_SIZE = 512;
 
@@ -16,7 +16,8 @@ public class Lab01 extends Lab{
         Integer[] array = this.getRandomArray(ARRAY_SIZE);
         Integer target = this.getTarget(array);
 
-        Helpers.printIterable(Arrays.asList(array), 8);
+        System.out.println("Looking for " + target + " in:");
+        Helpers.printIterable(Arrays.asList(array), 16);
 
         Arrays.sort(array);
         int linearIndex = this.linearSearch(array, target);
@@ -58,7 +59,7 @@ public class Lab01 extends Lab{
     }
 
     public Integer getTarget(Integer[] array) {
-        int index = (int)(rand.nextDouble() * array.length);
+        int index = (int) (rand.nextDouble() * array.length);
         return array[index];
     }
 
