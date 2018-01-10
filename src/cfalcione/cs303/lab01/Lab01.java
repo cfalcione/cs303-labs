@@ -13,8 +13,8 @@ public class Lab01 extends Lab {
     protected Random rand = new Random();
 
     public void main(String[] args) {
-        Integer[] array = this.getRandomArray(ARRAY_SIZE);
-        Integer target = this.getTarget(array);
+        Integer[] array = Helpers.getRandomArray(ARRAY_SIZE, rand);
+        Integer target = Helpers.<Integer>getRandomElement(array);
 
         System.out.println("Looking for " + target + " in:");
         Helpers.printIterable(Arrays.asList(array), 16);
@@ -50,18 +50,6 @@ public class Lab01 extends Lab {
         return mid;
     }
 
-    public Integer[] getRandomArray(int size) {
-        Integer[] output = new Integer[size];
-        for (int i = 0; i < size; i++) {
-            output[i] = rand.nextInt();
-        }
-        return output;
-    }
-
-    public Integer getTarget(Integer[] array) {
-        int index = (int) (rand.nextDouble() * array.length);
-        return array[index];
-    }
 
 
 }
