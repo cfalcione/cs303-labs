@@ -22,13 +22,13 @@ public class SortingAlgorithmBenchmark {
         }
     }
 
-    public static void benchmark(Collection<SortingAlgorithm<Integer>> algorithms, Integer[] array, boolean[] hasTimedOut) {
+    private static void benchmark(Collection<SortingAlgorithm<Integer>> algorithms, Integer[] array, boolean[] timeouts) {
         String[] row = new String[algorithms.size() + 1];
         row[0] = array.length + "";
 
         int i = 1;
         for (SortingAlgorithm<Integer> algorithm : algorithms) {
-            if (hasTimedOut[i - 1]) {
+            if (timeouts[i - 1]) {
                 row[i] = "TIMED_OUT";
                 i++;
                 continue;
@@ -39,7 +39,7 @@ public class SortingAlgorithmBenchmark {
             row[i] = time + "";
 
             if (time > TIMEOUT) {
-                hasTimedOut[i - 1] = true;
+                timeouts[i - 1] = true;
             }
 
             i++;
