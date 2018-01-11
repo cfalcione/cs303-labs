@@ -58,5 +58,10 @@ public class Helpers {
         return true;
     }
 
+    @SafeVarargs
+    public static <T> T[] makeGenericArray( T ...array) {
+        return Arrays.copyOf(array, array.length);
+    }
+
 
 }

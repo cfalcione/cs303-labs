@@ -2,14 +2,17 @@ package cfalcione.cs303.lab02;
 
 import cfalcione.cs303.shared.*;
 
+import java.util.Arrays;
+
 public class Lab02 extends Lab {
 
     public void main(String[] args) {
-        InsertionSort<Integer> insertionSort = new InsertionSort<>();
-        ReferenceSort<Integer> reference = new ReferenceSort<>();
+        SortingAlgorithm<Integer>[] algorithms = Helpers.makeGenericArray(
+            new ReferenceSort<>(),
+            new InsertionSort<>()
+        );
 
-        SortingAlgorithmBenchmark.benchmark(insertionSort);
-        SortingAlgorithmBenchmark.benchmark(reference);
+        SortingAlgorithmBenchmark.benchmark(Arrays.asList(algorithms));
     }
 
 }
