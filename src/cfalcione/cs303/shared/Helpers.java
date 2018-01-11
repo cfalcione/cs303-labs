@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class Helpers {
 
-    public static Random rand = new Random();
+    public static Random random = new Random();
 
-    public static Integer[] getRandomArray(int size, Random rand) {
+    public static Integer[] getRandomArray(int size) {
         Integer[] output = new Integer[size];
         for (int i = 0; i < size; i++) {
-            output[i] = rand.nextInt();
+            output[i] = random.nextInt();
         }
         return output;
     }
@@ -43,7 +43,7 @@ public class Helpers {
     }
 
     public static <T> T getRandomElement(T[] array) {
-        int index = (int) (rand.nextDouble() * array.length);
+        int index = (int) (random.nextDouble() * array.length);
         return array[index];
     }
 

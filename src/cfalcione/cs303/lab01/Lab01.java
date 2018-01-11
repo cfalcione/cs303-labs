@@ -10,10 +10,8 @@ public class Lab01 extends Lab {
 
     public static final int ARRAY_SIZE = 512;
 
-    protected Random rand = new Random();
-
     public void main(String[] args) {
-        Integer[] array = Helpers.getRandomArray(ARRAY_SIZE, rand);
+        Integer[] array = Helpers.getRandomArray(ARRAY_SIZE);
         Integer target = Helpers.getRandomElement(array);
 
         System.out.println("Looking for " + target + " in:");
