@@ -14,10 +14,10 @@ public class Lab01 extends Lab {
 
     public void main(String[] args) {
         Integer[] array = Helpers.getRandomArray(ARRAY_SIZE, rand);
-        Integer target = Helpers.<Integer>getRandomElement(array);
+        Integer target = Helpers.getRandomElement(array);
 
         System.out.println("Looking for " + target + " in:");
-        Helpers.printIterable(Arrays.asList(array), 16);
+        Helpers.printArray(array, 16);
 
         Arrays.sort(array);
         int linearIndex = this.linearSearch(array, target);
