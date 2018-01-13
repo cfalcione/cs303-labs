@@ -37,7 +37,12 @@ public class SortingAlgorithmBenchmark {
 
             Integer[] copy = array.clone();
             double time = (double) algorithm.time(copy) / ONE_SECOND; // in seconds
-            row[i] = time + "";
+            boolean correct = isSorted(copy);
+            if (correct) {
+                row[i] = time + "";
+            } else {
+                row[i] = "BAD_SORT";
+            }
 
             if (time > TIMEOUT) {
                 timeouts[i - 1] = true;
@@ -53,7 +58,7 @@ public class SortingAlgorithmBenchmark {
     public static boolean isSorted(Integer[] array) {
         if (array.length < 2) return true;
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > array[i - 1]) return false;
+            if (array[i] < array[i - 1]) return false;
         }
         return true;
     }
