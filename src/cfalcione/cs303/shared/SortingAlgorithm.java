@@ -4,7 +4,9 @@ import java.util.Timer;
 
 public abstract class SortingAlgorithm <T extends Comparable<T>> {
 
-    public abstract void sort(T[] array);
+    public void sort(T[] array) {
+        sort(array, 0, array.length - 1);
+    }
 
     public abstract void sort(T[] array, int start, int end);
 

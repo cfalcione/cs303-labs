@@ -6,10 +6,6 @@ public class InsertionSort <T extends Comparable<T>> extends SortingAlgorithm<T>
 
     public String name() { return "Insertion Sort"; }
 
-    public void sort(T[] array) {
-        sort(array, 0, array.length - 1);
-    }
-
     public void sort(T[] array, int start, int end) {
         if (end - start < 2) return;
         for (int i = start + 1; i <= end; i++) {
