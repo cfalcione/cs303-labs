@@ -6,6 +6,8 @@ public abstract class SortingAlgorithm <T extends Comparable<T>> {
 
     public abstract void sort(T[] array);
 
+    public abstract void sort(T[] array, int start, int end);
+
     public abstract String name();
 
     /**
