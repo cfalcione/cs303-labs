@@ -18,8 +18,8 @@ public class SortingAlgorithmBenchmark {
         for (int size = 8; size <= MAX_SIZE; size *= 2) {
             Integer[] array = Helpers.getRandomArray(size);
 
-            boolean shoudContinue = benchmark(algorithms, array, hasTimedOut);
-            if (!shoudContinue) break;
+            boolean shouldContinue = benchmark(algorithms, array, hasTimedOut);
+            if (!shouldContinue) break;
         }
     }
 
