@@ -18,11 +18,12 @@ public class SortingAlgorithmBenchmark {
         for (int size = 8; size <= MAX_SIZE; size *= 2) {
             Integer[] array = Helpers.getRandomArray(size);
 
-            benchmark(algorithms, array, hasTimedOut);
+            boolean shoudContinue = benchmark(algorithms, array, hasTimedOut);
+            if (!shoudContinue) break;
         }
     }
 
-    private static void benchmark(Collection<SortingAlgorithm<Integer>> algorithms, Integer[] array, boolean[] timeouts) {
+    private static boolean benchmark(Collection<SortingAlgorithm<Integer>> algorithms, Integer[] array, boolean[] timeouts) {
         String[] row = new String[algorithms.size() + 1];
         row[0] = array.length + "";
 
@@ -45,14 +46,16 @@ public class SortingAlgorithmBenchmark {
             i++;
         }
         String renderedRow = String.join(",", row);
-        if (allTimedOut(renderedRow)) return;
         System.out.println(renderedRow);
+        return !allTimedOut(renderedRow);
     }
 
-    public static boolean testSort(Integer[] array) {
-        Integer[] sortedCopy = array.clone();
-        Arrays.sort(sortedCopy);
-        return Helpers.areArraysEqual(array, sortedCopy);
+    public static boolean isSorted(Integer[] array) {
+        if (array.length < 2) return true;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > array[i - 1]) return false;
+        }
+        return true;
     }
 
     public static String generateHeaders(Collection<SortingAlgorithm<Integer>> algorithms) {
