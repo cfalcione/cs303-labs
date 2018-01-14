@@ -28,3 +28,10 @@ and then compile and run with
 ```
 ./run.sh
 ```
+
+
+Some of the labs write a csv to stdout. To get a csv file, use
+```
+./run.sh > output.csv
+```
+on Unix-based systems. On Windows, append ` > output.csv` to whatever command you're using to run the files.
