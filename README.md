@@ -21,7 +21,7 @@ If you want to run a particular lab, change the getCurrentLab() method in src/cf
 For example:
 ```java
 private static Lab getCurrentLab() {
-        return new Lab04();
+    return new Lab04();
 }
 ```
 and then compile and run with
