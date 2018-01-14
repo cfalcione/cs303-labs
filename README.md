@@ -30,7 +30,7 @@ and then compile and run with
 ```
 
 
-The stdout of some labs (namely the Sorting Algorithm ones) is formatted as a csv. To get a csv file, use
+The stdout of some labs (namely the Sorting Algorithm ones) are formatted as csv's. To get a csv file, use
 ```
 ./run.sh > output.csv
 ```
