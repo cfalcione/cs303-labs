@@ -36,6 +36,6 @@ The stdout of some labs (namely the Sorting Algorithm ones) is formatted as a cs
 ```
 on Unix-based systems. On Windows, append ` > output.csv` to whatever command you're using to run the files. For example:
 ```
-cd src
+cd out/production
 java cfalcione.cs303.Main > output.csv
 ```
