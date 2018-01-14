@@ -37,7 +37,7 @@ public class SortingAlgorithmBenchmark {
 
             Integer[] copy = array.clone();
             double time = (double) algorithm.time(copy) / ONE_SECOND; // in seconds
-            boolean correct = isSorted(copy);
+            boolean correct = Helpers.isSorted(copy);
             if (correct) {
                 row[i] = time + "";
             } else {
@@ -55,13 +55,7 @@ public class SortingAlgorithmBenchmark {
         return !allTimedOut(renderedRow);
     }
 
-    public static boolean isSorted(Integer[] array) {
-        if (array.length < 2) return true;
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < array[i - 1]) return false;
-        }
-        return true;
-    }
+
 
     public static String generateHeaders(Collection<SortingAlgorithm<Integer>> algorithms) {
         String[] results = new String[algorithms.size() + 1];
