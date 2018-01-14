@@ -2,7 +2,7 @@
 The labs for my Algorithms and Data Structures course. Written in Java 8.
 
 ## Installation
-Verify that you have the <a href="http://bfy.tw/G2N4">Java Development Kit</a> installed. Either Oracle Java or OpenJDK8 will work.
+Verify that you have the <a href="http://bfy.tw/G2N8">Java Development Kit</a> installed. Either Oracle Java or OpenJDK8 will work.
 
 If you're running a Unix-based OS, I've included `compile.sh` and `run.sh` scripts for compiling and executing the project, respectively. Ensure that they're executable with
 ```
