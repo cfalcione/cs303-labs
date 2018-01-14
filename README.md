@@ -11,7 +11,7 @@ chmod +x compile.sh run.sh
 If you're running Windows, the java commands inside the scripts should work fine. Just make sure that the <project root>\out\production folder exists.
 
 ## Usage
-If you want to run a particular lab, change the getCurrentLab() method in src/cfalcione/cs330/Main.java to that lab. Maybe I'll later make selecting a lab part of the CLI later.
+If you want to run a particular lab, change the getCurrentLab() method in src/cfalcione/cs330/Main.java to that lab. Maybe I'll later make selecting a lab part of the CLI.
 For example:
 ```java
 private static Lab getCurrentLab() {
