@@ -30,8 +30,12 @@ and then compile and run with
 ```
 
 
-Some of the labs write a csv to stdout. To get a csv file, use
+The stdout of some labs (namely the Sorting Algorithm ones) is formatted as a csv. To get a csv file, use
 ```
 ./run.sh > output.csv
 ```
-on Unix-based systems. On Windows, append ` > output.csv` to whatever command you're using to run the files.
+on Unix-based systems. On Windows, append ` > output.csv` to whatever command you're using to run the files. For example:
+```
+cd src
+java cfalcione.cs303.Main > output.csv
+```
