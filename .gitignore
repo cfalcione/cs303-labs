@@ -2,3 +2,4 @@
 out/
 prompts/
 *.class
+results.csv
