@@ -20,6 +20,14 @@ public class Lab05 extends Lab {
         );
 
         SortingAlgorithmBenchmark.benchmark(Arrays.asList(algorithms));
+
+//        // For testing performance on an already-sorted array
+//        Integer[] array = Helpers.getRandomArray(1 << 20);
+//        QuickSort<Integer> quickSort = new QuickSort<>();
+//
+//        System.out.println("Size: " + (array.length));
+//        System.out.println("Random: " + quickSort.time(array));
+//        System.out.println("Sorted: " + quickSort.time(array));
     }
 
 }
