@@ -1,12 +1,11 @@
 package cfalcione.cs303.shared;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.regex.Pattern;
 
 public class SortingAlgorithmBenchmark {
 
-    public static final int MAX_SIZE = Integer.MAX_VALUE / 2; //arbitrarily chosen
+    public static final int MAX_SIZE = 1 << 26; //arbitrarily chosen
     public static final long ONE_SECOND = 1000000000L;
     public static final double TIMEOUT = 1d;
 
@@ -54,7 +53,6 @@ public class SortingAlgorithmBenchmark {
         System.out.println(renderedRow);
         return !allTimedOut(renderedRow);
     }
-
 
 
     public static String generateHeaders(Collection<SortingAlgorithm<Integer>> algorithms) {
