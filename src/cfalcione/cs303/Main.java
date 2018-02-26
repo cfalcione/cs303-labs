@@ -6,6 +6,7 @@ import cfalcione.cs303.lab03.Lab03;
 import cfalcione.cs303.lab04.Lab04;
 import cfalcione.cs303.lab05.Lab05;
 import cfalcione.cs303.lab06.Lab06;
+import cfalcione.cs303.lab07.Lab07;
 import cfalcione.cs303.shared.Lab;
 
 public class Main {
@@ -16,6 +17,6 @@ public class Main {
     }
 
     private static Lab getCurrentLab() {
-        return new Lab06();
+        return new Lab07();
     }
 }
