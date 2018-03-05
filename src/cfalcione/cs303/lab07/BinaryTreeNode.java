@@ -1,40 +1,38 @@
 package cfalcione.cs303.lab07;
 
-public class BinaryTreeNode<T extends Comparable<T>> {
+public class BinaryTreeNode<T extends Comparable<T>> extends AbstractBTNode<T> {
 
     private T value;
-    private BinaryTreeNode<T> left;
-    private BinaryTreeNode<T> right;
+    private AbstractBTNode<T> parent;
+    private AbstractBTNode<T> left;
+    private AbstractBTNode<T> right;
 
-    public BinaryTreeNode(T value) {
-        this.setValue(value);
+    public BinaryTreeNode (T data) {
+        super(data);
     }
 
     public T getValue() {   return this.value;  }
-    public BinaryTreeNode<T> getLeft() {   return left;    }
-    public BinaryTreeNode<T> getRight() {   return right;    }
+
+    public AbstractBTNode<T> getParent() {
+        return null;
+    }
+
+    public AbstractBTNode<T> getLeft() {   return left;    }
+    public AbstractBTNode<T> getRight() {   return right;    }
 
     public void setValue(T value) {
         this.value = value;
     }
 
-    public void setLeft(BinaryTreeNode<T> left) {
+    public void setParent(AbstractBTNode<T> parent) {
+        this.parent = parent;
+    }
+
+    public void setLeft(AbstractBTNode<T> left) {
         this.left = left;
     }
 
-    public void setRight (BinaryTreeNode<T> right) {
+    public void setRight (AbstractBTNode<T> right) {
         this.right = right;
-    }
-
-    public String inOrder() {
-        String result = "";
-        if (left != null) {
-            result += left.inOrder() + " ";
-        }
-        result += value.toString() + " ";
-        if (right != null) {
-            result += right.inOrder() + " ";
-        }
-        return result;
     }
 }
