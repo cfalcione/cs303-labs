@@ -11,6 +11,10 @@ public class BinarySearchTree<T extends Comparable<T>> extends AbstractBinarySea
 
     public BinaryTreeNode<T> getRoot() {    return root;    }
 
+    public boolean isNull(AbstractBTNode<T> node) {
+        return node == null;
+    }
+
     public void setRoot(AbstractBTNode<T> node) {
         this.root = (BinaryTreeNode<T>) node;
     }

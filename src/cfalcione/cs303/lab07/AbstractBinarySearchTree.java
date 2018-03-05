@@ -6,6 +6,8 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>> {
 
     public abstract AbstractBTNode<T> getRoot();
 
+    public abstract boolean isNull(AbstractBTNode<T> node);
+
     public abstract void setRoot(AbstractBTNode<T> node);
 
     public abstract AbstractBTNode<T> makeNode(T data);
@@ -16,30 +18,33 @@ public abstract class AbstractBinarySearchTree<T extends Comparable<T>> {
         }
     }
 
-    public void insert(T data) {
+    public AbstractBTNode<T> insert(T data) {
         AbstractBTNode<T> node = this.makeNode(data);
-        if (this.getRoot() == null) {
+        if (isNull(getRoot())) {
             this.setRoot(node);
-            return;
+            return node;
         }
         AbstractBTNode<T> cursor = getRoot();
         while( (cursor != null)  ){
             int compare = data.compareTo(cursor.getValue());
             if (compare > 0) {
-                if (cursor.getRight() != null) {
+                if (!isNull(cursor.getRight())) {
                     cursor = cursor.getRight();
                     continue;
                 }
                 cursor.setRight(node);
-                return;
+                node.setParent(cursor);
+                return cursor;
             }
-            if (cursor.getLeft() != null) {
+            if (!isNull(cursor.getLeft()) ) {
                 cursor = cursor.getLeft();
                 continue;
             }
             cursor.setLeft(node);
-            return;
+            node.setParent(cursor);
+            return cursor;
         }
-
+        //this should never execute
+        return null;
     }
 }
