@@ -1,5 +1,7 @@
 package cfalcione.cs303.lab10;
 
+import cfalcione.cs303.lab10.Graph.Graph;
+
 import java.util.*;
 
 public class BreadthFirstSearch {
