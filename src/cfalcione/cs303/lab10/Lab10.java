@@ -1,8 +1,6 @@
 package cfalcione.cs303.lab10;
 
-import cfalcione.cs303.lab10.Graph.DirectedGraph;
-import cfalcione.cs303.lab10.Graph.Graph;
-import cfalcione.cs303.lab10.Graph.UndirectedGraph;
+import cfalcione.cs303.lab10.Graph.*;
 import cfalcione.cs303.shared.Helpers;
 import cfalcione.cs303.shared.Lab;
 
@@ -14,20 +12,23 @@ public class Lab10 extends Lab{
 
     public void main(String[] args) {
         String filename = "resources/mediumG.txt";
-        Graph graph = getGraph(filename, GraphType.DIRECTED);
+        Graph graph = getGraph(filename, GraphType.DIRECTED, new AdjacencyMatrix());
+//        System.out.print(graphA);
+//        System.out.print(graphB);
         BreadthFirstSearch bfs = new BreadthFirstSearch(graph, 2);
         Helpers.printIterable(bfs.pathFrom(213), 16);
     }
 
-    private Graph getGraph(String filename, GraphType type) {
+    private Graph getGraph(String filename, GraphType type, EdgeModel edgeModel) {
         Graph graph;
         try {
             switch(type) {
                 case DIRECTED:
-                    graph = new DirectedGraph(filename);
+                    graph = new DirectedGraph(filename, edgeModel);
                     break;
+                case UNDIRECTED: //undirected is intentionally default
                 default:
-                    graph = new UndirectedGraph(filename);
+                    graph = new UndirectedGraph(filename, edgeModel);
                     break;
             }
         } catch (IOException e) {
@@ -36,6 +37,10 @@ public class Lab10 extends Lab{
             return null;
         }
         return graph;
+    }
+
+    private Graph getGraph(String filename, GraphType type) {
+        return getGraph(filename, type, new AdjacencyList());
     }
 
 }
