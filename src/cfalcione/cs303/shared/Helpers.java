@@ -33,6 +33,18 @@ public class Helpers {
         printIterable(iterable, 1);
     }
 
+    public static void printArray(int[] array, int columns) {
+        Integer[] newArray = new Integer[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        printArray(newArray, columns);
+    }
+
+    public static void printArray(int[] array) {
+        printArray(array, 16);
+    }
+
     public static <T> void printArray(T[] array, int columns) {
         List<T> list = Arrays.asList(array);
         printIterable(list, columns);
