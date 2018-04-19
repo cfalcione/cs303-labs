@@ -11,6 +11,10 @@ public class DirectedGraph extends Graph {
         super(filename);
     }
 
+    public DirectedGraph(String filename, EdgeModel edgeModel) throws IOException {
+        super(filename, edgeModel);
+    }
+
     @Override
     public void addEdge(int v, int w) {
         edges.addEdge(v, w);
