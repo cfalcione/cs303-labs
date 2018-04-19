@@ -4,8 +4,6 @@ import cfalcione.cs303.lab10.Graph.*;
 import cfalcione.cs303.shared.Helpers;
 import cfalcione.cs303.shared.Lab;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class Lab10 extends Lab{
@@ -19,7 +17,7 @@ public class Lab10 extends Lab{
         Helpers.printIterable(bfs.pathFrom(213), 16);
     }
 
-    private Graph getGraph(String filename, GraphType type, EdgeModel edgeModel) {
+    public static Graph getGraph(String filename, GraphType type, EdgeModel edgeModel) {
         Graph graph;
         try {
             switch(type) {
@@ -39,12 +37,9 @@ public class Lab10 extends Lab{
         return graph;
     }
 
-    private Graph getGraph(String filename, GraphType type) {
+    public static Graph getGraph(String filename, GraphType type) {
         return getGraph(filename, type, new AdjacencyList());
     }
 
 }
 
-enum GraphType {
-    DIRECTED, UNDIRECTED;
-}
