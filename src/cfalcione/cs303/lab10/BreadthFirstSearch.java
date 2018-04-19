@@ -32,6 +32,10 @@ public class BreadthFirstSearch {
             endVertex = parents[endVertex];
         }
 
+        if (!isRoot(path.get(path.size() - 1))) {
+            return new ArrayList<Integer>();
+        }
+
         return path;
     }
 
@@ -55,6 +59,10 @@ public class BreadthFirstSearch {
 
     private void markRoot(int vertex) {
         parents[vertex] = -2;
+    }
+
+    private boolean isRoot(int vertex) {
+        return parents[vertex] < -1;
     }
 
     private boolean isVertex(int vertex) {
