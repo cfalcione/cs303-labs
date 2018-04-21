@@ -12,9 +12,7 @@ public class lab11 extends Lab{
 
     public void main(String[] args) {
         String filename = "resources/mediumG.txt";
-        Graph graph = Lab10.getGraph(filename, GraphType.DIRECTED, new AdjacencyMatrix());
-//        System.out.print(graphA);
-//        System.out.print(graphB);
+        Graph graph = Lab10.getGraph(filename, GraphType.UNDIRECTED, new AdjacencyMatrix());
         DepthFirstSearch bfs = new DepthFirstSearch(graph, 2);
         Helpers.printIterable(bfs.pathFrom(213), 16);
     }
