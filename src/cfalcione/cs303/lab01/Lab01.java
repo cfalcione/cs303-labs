@@ -13,15 +13,14 @@ public class Lab01 extends Lab {
     public void main(String[] args) {
         Integer[] array = Helpers.getRandomArray(ARRAY_SIZE);
         Integer target = Helpers.getRandomElement(array);
+        Arrays.sort(array);
 
         System.out.println("Looking for " + target + " in:");
         Helpers.printArray(array, 16);
 
-        Arrays.sort(array);
         int linearIndex = linearSearch(array, target);
-        int binaryIndex = binarySearch(array, target);
-
         System.out.println("Linear Search: " + linearIndex);
+        int binaryIndex = binarySearch(array, target);
         System.out.println("Binary Search: " + binaryIndex);
     }
 
