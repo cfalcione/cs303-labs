@@ -1,18 +1,15 @@
 package cfalcione.cs303.lab10;
 
 import cfalcione.cs303.lab10.Graph.Graph;
+import cfalcione.cs303.shared.GraphSearch;
 
 import java.util.*;
 
-public class BreadthFirstSearch {
+public class BreadthFirstSearch extends GraphSearch {
 
-    protected Graph graph;
-    protected int[] parents;
 
     public BreadthFirstSearch(Graph graph, int startVertex) {
-        this.graph = graph;
-        this.parents = new int[graph.V];
-        search(startVertex);
+        super(graph, startVertex);
     }
 
     public void search(int startVertex) {
@@ -27,47 +24,11 @@ public class BreadthFirstSearch {
         }
     }
 
-    public Iterable<Integer> pathFrom(int endVertex) {
-        ArrayList<Integer> path = new ArrayList<>();
-        while (isVertex(endVertex)) {
-            path.add(endVertex);
-            endVertex = parents[endVertex];
-        }
-
-        if (!isRoot(path.get(path.size() - 1))) {
-            return new ArrayList<Integer>();
-        }
-
-        return path;
-    }
-
     protected void processVertex(Queue<Integer> queue, int vertex) {
         for (int neighbor : graph.neighbors(vertex)) {
             if (visited(neighbor)) continue;
-            parents[neighbor] = vertex;
+            setParent(neighbor, vertex);
             queue.add(neighbor);
         }
-    }
-
-    private void initParents() {
-        for (int i = 0; i < parents.length; i++) {
-            parents[i] = -1;
-        }
-    }
-
-    private boolean visited(int vertex) {
-        return parents[vertex] != -1;
-    }
-
-    private void markRoot(int vertex) {
-        parents[vertex] = -2;
-    }
-
-    private boolean isRoot(int vertex) {
-        return parents[vertex] < -1;
-    }
-
-    private boolean isVertex(int vertex) {
-        return vertex >= 0;
     }
 }
